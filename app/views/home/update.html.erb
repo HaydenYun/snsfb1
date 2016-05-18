@@ -1,0 +1,29 @@
+<nav>
+    <div class="nav-wrapper">
+      <a href="/home/welcome" class="brand-logo" style="margin-left:10px">SNS</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/home/index">타임라인</a></li>
+        <li><a href="/home/me">만든이</a></li>
+      </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+    <br>
+    <form action="/home/update_write/<%= @one_post.id %>" method="post">
+        <div class="input-field" style="width:15%">
+          <input value="<%= @one_post.nickname %>" name="nickname" id ="nickname" type="text" class="validate">
+        </div>
+          <div class="row">
+            <div class="input-field" style="margin-left:11px">
+              <textarea name="content" id="content" class="materialize-textarea"><%= @one_post.content %></textarea>
+            </div>
+          </div>
+
+        <button class="btn-floating btn-large waves-effect waves-light red" type="submit" name="action"><span style="font-size:22px"></span>
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+  </div>
+</div>
